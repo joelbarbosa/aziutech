@@ -30,45 +30,13 @@
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
  <!--  <div id="overlayer"></div>
   <div class="loader">
     <div class="spinner-border text-primary" role="status">
       <span class="sr-only">Loading...</span>
     </div>
   </div> -->
-
-  <script>
-    function sendEmail() {
-      var nome = document.getElementById("nome").value;
-      var email = document.getElementById("email").value;
-      var mensagem = document.getElementById("mensagem").value;
-
-      $.ajax({
-        type: "POST",
-        url: "https://mandrillapp.com/api/1.0/messages/send.json",
-        data: {
-          key: "44f1417e20514a46c9b21ddcfacc7737-us4",
-          message: {
-            from_email: email,
-            to: [
-                {
-                  email: "joelbarbosa.ads@gmail.com",
-                  name: nome,
-                  type: mensagem
-                },
-              ],
-            autotext: true,
-            subject: "Aziu Tech Web Site",
-            html: mensagem
-          }
-        }
-      }).done(function(response) {
-        console.log(response);
-        alert("Email enviado com sucesso. Entrarem em contato em breve.")
-      });
-    }
-  </script>
 
   <div class="site-wrap">
 
@@ -486,28 +454,9 @@
             <h2 class="title text-primary">Entre em Contato</h2>
           </div>
 
-          <div class="row mb-4">
+          <div class="row text-center mb-5">
             <div class="col-12">
-              <input type="text" id="nome" class="form-control" placeholder="Nome">
-            </div>
-            
-          </div>
-
-          <div class="row mb-4">
-            <div class="col-12">
-              <input type="text" id="email" class="form-control" placeholder="Email">
-            </div>
-          </div>
-
-          <div class="row mb-4">
-            <div class="col-12">
-              <textarea class="form-control" id="mensagem" name="" id="" cols="30" rows="10" placeholder="Mensagem"></textarea>
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-12">
-              <button type="submit" onclick="sendEmail()" class="btn btn-primary btn-md">Enviar Mensagem</button>
+              <a href="https://forms.gle/pKd4b5iYbMXbvoPW9" target="_blanck" class="btn btn-primary btn-md">Formulário de Contato</a>
             </div>
           </div>
 
